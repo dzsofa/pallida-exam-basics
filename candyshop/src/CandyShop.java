@@ -4,7 +4,7 @@ public class CandyShop {
     public static String CANDY = "CANDY";
     public static String LOLLIPOP = "LOLLIPOP";
     int sugar;
-    int income;
+    double income;
     ArrayList candyShop;
 
     public CandyShop(int sugar) {
@@ -36,6 +36,11 @@ public class CandyShop {
             }
         }
 
+    }
+
+    public void buySugar(int amount) {
+        this.sugar += amount;
+        this.income -= amount * 0.1;
     }
 
 //    public String candyShop() {
