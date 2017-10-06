@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class CandyShop {
+    public static String CANDY = "CANDY";
+    public static String LOLLIPOP = "LOLLIPOP";
     int sugar;
     int income;
     ArrayList candyShop;
@@ -11,13 +13,21 @@ public class CandyShop {
         this.candyShop = new ArrayList();
     }
 
-    public void createSweets(Sweets sweetType) {
-        if (sweetType.sugarContent == 10) {
-            candyShop.add(new Candy());
-            this.sugar -= 10;
-        } else if (sweetType.sugarContent == 5) {
-            candyShop.add(new Lollipop());
+    public void createSweets(String sweetType) {
+        if (sweetType.equals(LOLLIPOP)) {
+            candyShop.add(LOLLIPOP);
             this.sugar -= 5;
+        } else if (sweetType.equals(CANDY)) {
+            candyShop.add(CANDY);
+            this.sugar -= 10;
         }
+    }
+
+    public void sell() {
+
+    }
+
+    public String candyShop() {
+        return "Inventory: " + candyShop.contains(LOLLIPOP) + candyShop.contains(CANDY) + " Income: " + this.income + ", Sugar: " + sugar + "gr.";
     }
 }
