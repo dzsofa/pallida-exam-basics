@@ -1,0 +1,6 @@
+.idea/
+out
+*.xml
+*.iml
+*.json
+*.class
