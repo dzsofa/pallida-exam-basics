@@ -38,12 +38,11 @@ public class CandyShop {
                 if (sweetType.equals(LOLLIPOP)) {
                     income += lollipopPrice;
                     candyShop.remove(LOLLIPOP);
-                    init++;
                 } else if (sweetType.equals(CANDY)) {
                     income += candyPrice;
                     candyShop.remove(CANDY);
-                    init++;
                 }
+                init++;
             }
         }
     }
