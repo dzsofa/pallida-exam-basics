@@ -32,8 +32,11 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+Functions are independent from classes (can be defined outside a class), whereas methods are associated with classes
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+The constructor is used to initialize the object. The constructor is set within the object's class, with the same name as the class and with no return type. 
+Constructors have two types:
+  Default constructor (with no parameters)
+  Parameterized constructor (has parameters)
