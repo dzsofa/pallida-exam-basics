@@ -19,13 +19,13 @@ public class FavouriteAnimals {
         // The program should only save animals, no need to print them
 
         if (args.length != 0) {
-            append("./favourites.txt", args[0]);
+            appendAnimal("./favourites.txt", args[0]);
         } else {
             printAnimals("./favourites.txt");
         }
     }
 
-    public static void append(String path, String newFavorite) {
+    public static void appendAnimal(String path, String newFavorite) {
         try {
             Path taskPath = Paths.get(path);
             List<String> favorites = new ArrayList<>();
@@ -45,7 +45,7 @@ public class FavouriteAnimals {
                 System.out.println();
             }
         } catch (IOException e) {
-            System.out.println("Unable to write file: " + path);
+            System.out.println("Unable to read file: " + path);
         }
     }
 }
