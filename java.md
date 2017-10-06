@@ -32,7 +32,7 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-Functions are independent from classes, whereas methods are associated with classes
+Functions are independent from classes (can be defined outside a class), whereas methods are associated with classes
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
