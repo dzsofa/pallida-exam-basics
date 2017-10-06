@@ -23,11 +23,21 @@ public class CandyShop {
         }
     }
 
-    public void sell() {
+    public void sell(String sweetType, int amount) {
+        for (int i = 0; i < amount; i++) {
+            for (int j = 0; j < candyShop.size(); j++) {
+                if (sweetType.equals(LOLLIPOP)) {
+                    income += 10;
+                    candyShop.remove(LOLLIPOP);
+                } else if (sweetType.equals(CANDY)) {
+                    income += 20;
+                    candyShop.remove(CANDY);
+                }
+            }
+        }
 
     }
 
-    public String candyShop() {
-        return "Inventory: " + candyShop.contains(LOLLIPOP) + candyShop.contains(CANDY) + " Income: " + this.income + ", Sugar: " + sugar + "gr.";
-    }
+//    public String candyShop() {
+//    }
 }
