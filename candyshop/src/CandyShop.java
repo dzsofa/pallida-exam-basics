@@ -7,6 +7,8 @@ public class CandyShop {
     double sugar;
     double income;
     ArrayList candyShop;
+    double lollipopPrice = 10;
+    double candyPrice = 20;
 
     public CandyShop(int sugar) {
         this.sugar = sugar;
@@ -25,42 +27,37 @@ public class CandyShop {
     }
 
     public void raise(int amount) {
-        double lollipopPrice = 10;
-        double candyPrice = 20;
         lollipopPrice += lollipopPrice / 100 * amount;
         candyPrice += candyPrice / 100 * amount;
     }
 
     public void sell(String sweetType, int amount) {
-        for (int i = 0; i < amount; i++) {
-            for (int j = 0; j < candyShop.size(); j++) {
+        int init = 0;
+        for (int i = 0; i < candyShop.size(); i++) {
+            while (init < amount) {
                 if (sweetType.equals(LOLLIPOP)) {
-                    income += 10;
+                    income += lollipopPrice;
                     candyShop.remove(LOLLIPOP);
+                    init++;
                 } else if (sweetType.equals(CANDY)) {
-                    income += 20;
+                    income += candyPrice;
                     candyShop.remove(CANDY);
+                    init++;
                 }
             }
         }
-
     }
+
 
     public void buySugar(int amount) {
         this.sugar += amount;
         this.income -= amount * 0.1;
     }
 
-//    public String candyShop() {
-//        int candyOccurence = Collections.frequency(candyShop, "CANDY");
-//        int lollipopOccurence = Collections.frequency(candyShop, "LOLLIPOP");
-//        return "Inventory: " + candyOccurence + " candies, " + lollipopOccurence + " lollipops, Income: " + income + "$, Sugar: " + sugar;
-//    }
-
     @Override
     public String toString() {
         int candyOccurence = Collections.frequency(candyShop, "CANDY");
         int lollipopOccurence = Collections.frequency(candyShop, "LOLLIPOP");
-        return "Inventory: " + candyOccurence + " candies, " + lollipopOccurence + " lollipops, Income: " + income + "$, Sugar: " + sugar;
+        return "Inventory: " + candyOccurence + " candies, " + lollipopOccurence + " lollipops, Income: " + income + "$, Sugar: " + sugar + "gr";
     }
 }
